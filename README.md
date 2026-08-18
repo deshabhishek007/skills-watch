@@ -90,6 +90,30 @@ You can mix sectors in one CSV — fill the `sector` column and each sector is
 aggregated separately in `sector_summary.csv` / `sector_skills.csv`. Set
 `enabled=false` to park a company without deleting the row.
 
+## Check your own skill gap
+
+Once a run has produced sector data, compare it against **your** skills to see
+what you're strong in and what to learn next:
+
+```bash
+cp profile/my-skills.example.yml profile/my-skills.yml   # edit with your skills
+.venv/bin/python -m skills_watch gap --skills profile/my-skills.yml
+```
+
+Write skills in your own words — aliases work ("K8s", "GCP", "WP"). The result,
+`output/skill_gap.md`, has three parts:
+
+- **Skills you have that the market wants** — your skills ranked by how often
+  the sector's vacancies mention them.
+- **Skills to focus on** — the highest-demand skills *not* on your list; once
+  two snapshots exist, each shows its demand trend so you can prioritise what's
+  rising.
+- **Not recognised** — anything that didn't match the taxonomy (add real skills
+  to `taxonomy/skills.yml`).
+
+`profile/my-skills.yml` is gitignored, so your personal skill list stays out of
+your public fork.
+
 ## Supported collectors
 
 | `source_type` | `source_ref` | Source |

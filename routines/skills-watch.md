@@ -58,6 +58,17 @@ Open `output/report.md` and replace the placeholder comment under
 - Flag small samples (<10 jobs) whenever you cite a company-level rate.
 - When trend data exists, lead with the biggest percentage-point movers.
 
+## Phase 8b — Personal skill gap (if configured)
+
+If `profile/my-skills.yml` exists, regenerate the personal gap report:
+
+```bash
+.venv/bin/python -m skills_watch gap --skills profile/my-skills.yml
+```
+
+Mention the top 3 gap skills (with demand rates and trend, when available) in
+your final summary. The gap file itself is gitignored — don't commit it.
+
 ## Phase 9 — Commit and summarise
 
 ```bash

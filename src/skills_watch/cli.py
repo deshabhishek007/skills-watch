@@ -171,8 +171,32 @@ def main(argv: list[str] | None = None) -> int:
                    help="replace an existing snapshot for the same date")
     a.add_argument("--no-report", action="store_true")
     a.set_defaults(func=analyse)
+
+    g = sub.add_parser("gap", help="compare your skills against the sector's demand")
+    g.add_argument("--skills", required=True, help="YAML file with a `skills:` list")
+    g.add_argument("--output", default=str(ROOT / "output"))
+    g.add_argument("--taxonomy", default=str(ROOT / "taxonomy"))
+    g.set_defaults(func=gap_cmd)
+
     args = parser.parse_args(argv)
     return args.func(args)
+
+
+def gap_cmd(args: argparse.Namespace) -> int:
+    from .gap import run_gap
+    try:
+        md, result = run_gap(args.skills, args.output, args.taxonomy)
+    except FileNotFoundError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 1
+    out = Path(args.output) / "skill_gap.md"
+    out.write_text(md, encoding="utf-8")
+    top_gaps = ", ".join(e["skill"] for e in result["gaps"][:5])
+    print(f"skills validated by market demand: {len(result['validated'])}")
+    print(f"gap skills identified:            {len(result['gaps'])}")
+    print(f"top gaps by demand:               {top_gaps}")
+    print(f"report:                           {out}")
+    return 0
 
 
 if __name__ == "__main__":

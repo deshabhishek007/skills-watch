@@ -5,4 +5,5 @@ venv/
 *.egg-info/
 .pytest_cache/
 output/cache/
+profile/my-skills.yml
 .DS_Store

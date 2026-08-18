@@ -1,0 +1,10 @@
+# Your skills, in your own words — aliases are fine ("K8s", "GCP", "WP").
+# Copy to profile/my-skills.yml (gitignored if you prefer privacy) and run:
+#   python -m skills_watch gap --skills profile/my-skills.yml
+skills:
+  - WordPress
+  - PHP
+  - MySQL
+  - K8s
+  - Linux
+  - SEO

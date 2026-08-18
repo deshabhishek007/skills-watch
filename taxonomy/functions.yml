@@ -1,0 +1,36 @@
+# Job-function classification: ordered rules, first match on title wins.
+# Patterns are case-insensitive regexes matched against the job title
+# (department is checked as a fallback by the classifier).
+functions:
+  - name: Infrastructure / SRE
+    patterns: ["\\bSRE\\b", "site reliability", "devops", "infrastructure", "platform engineer", "systems? engineer", "sys ?admin", "cloud engineer", "network engineer", "datacenter", "data center"]
+  - name: Security
+    patterns: ["security", "\\bSOC\\b", "compliance engineer", "\\bGRC\\b", "abuse", "trust and safety"]
+  - name: AI / Machine Learning
+    patterns: ["machine learning", "\\bML\\b", "\\bAI\\b", "artificial intelligence", "data scientist", "\\bLLM\\b"]
+  - name: Data / Analytics
+    patterns: ["data engineer", "data analyst", "analytics", "business intelligence", "\\bBI\\b"]
+  - name: Product
+    patterns: ["product manager", "product owner", "product lead", "\\bCPO\\b", "product operations"]
+  - name: Design
+    patterns: ["designer", "\\bUX\\b", "\\bUI\\b", "design lead", "brand design"]
+  - name: Sales
+    patterns: ["sales", "account executive", "business development", "\\bSDR\\b", "\\bBDR\\b", "solutions? engineer", "pre-?sales", "revenue"]
+  - name: Marketing
+    patterns: ["marketing", "\\bSEO\\b", "content", "growth", "demand generation", "social media", "brand", "communications", "\\bPR\\b", "copywriter"]
+  - name: Customer Success
+    patterns: ["customer success", "account manager", "onboarding", "renewal"]
+  - name: Customer Support
+    patterns: ["support", "happiness", "customer service", "customer care", "technical account", "help ?desk"]
+  - name: Finance
+    patterns: ["finance", "accountant", "accounting", "payroll", "\\bFP&A\\b", "controller", "billing", "\\bCFO\\b"]
+  - name: HR / People
+    patterns: ["recruiter", "recruiting", "talent", "people operations", "human resources", "\\bHR\\b", "learning and development"]
+  - name: Legal / Compliance
+    patterns: ["legal", "counsel", "paralegal", "privacy", "compliance"]
+  # Deliberately late: "engineer"/"developer" are greedy, so specific functions
+  # (support, sales, SRE) must get first match.
+  - name: Engineering
+    patterns: ["software", "developer", "engineer", "engineering", "\\bQA\\b", "quality assurance", "architect", "\\bCTO\\b", "technical writer"]
+  - name: Operations
+    patterns: ["operations", "office manager", "executive assistant", "chief of staff", "program manager", "project manager", "procurement"]

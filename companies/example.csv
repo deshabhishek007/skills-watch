@@ -1,0 +1,4 @@
+company,website,careers_url,sector,enabled,notes,source_type,source_ref
+Acme Hosting,https://acme-hosting.example,https://acme-hosting.example/careers,Web Hosting,true,Fictional example company,generic,
+Globex Cloud,https://globex-cloud.example,https://globex-cloud.example/jobs,Cloud Infrastructure,true,Fictional example company,generic,
+Initech Security,https://initech-sec.example,,Cybersecurity,false,Disabled example row,,

@@ -1,0 +1,116 @@
+# Canonical skill taxonomy. Categories group skills for reporting;
+# the extractor matches each skill (and its aliases) with word-boundary,
+# case-sensitive-where-noted matching. Add freely — aliases live in skill_aliases.yml.
+#
+# `match` overrides the default pattern (the skill name itself) when the name is
+# ambiguous in prose. `case_sensitive: true` is for short acronyms like "Go" or "R".
+
+Programming:
+  - Python
+  - Java
+  - JavaScript
+  - TypeScript
+  - PHP
+  - name: Go
+    case_sensitive: true
+    match: "Go(?:lang)?"
+  - Rust
+  - "C#"
+  - "C++"
+  - Ruby
+  - Bash
+  - Node.js
+  - React
+  - Vue.js
+  - Laravel
+  - Symfony
+
+WordPress:
+  - WordPress
+  - WooCommerce
+  - Gutenberg
+  - WP-CLI
+  - WordPress Multisite
+  - WordPress VIP
+
+Cloud:
+  - AWS
+  - Microsoft Azure
+  - Google Cloud
+  - Cloudflare
+  - DigitalOcean
+
+Infrastructure:
+  - Kubernetes
+  - Docker
+  - Terraform
+  - Ansible
+  - Linux
+  - Nginx
+  - Apache
+  - LiteSpeed
+  - Varnish
+  - cPanel
+  - Plesk
+  - CDN
+  - DNS
+  - Load Balancing
+  - CI/CD
+  - Git
+  - Prometheus
+  - Grafana
+  - Observability
+
+Data:
+  - SQL
+  - PostgreSQL
+  - MySQL
+  - MariaDB
+  - Redis
+  - Memcached
+  - MongoDB
+  - Elasticsearch
+  - Snowflake
+  - Databricks
+  - Apache Spark
+  - Power BI
+  - Tableau
+  - Looker
+  - dbt
+
+AI:
+  - Machine Learning
+  - Generative AI
+  - LLMs
+  - RAG
+  - PyTorch
+  - TensorFlow
+  - MLOps
+  - Vector Databases
+  - Prompt Engineering
+  - AI Agents
+
+Security:
+  - Application Security
+  - Penetration Testing
+  - SOC 2
+  - Incident Response
+  - DDoS Mitigation
+  - WAF
+  - Zero Trust
+
+Business:
+  - Financial Modelling
+  - Risk Management
+  - Account Management
+  - B2B Sales
+  - Project Management
+  - Product Management
+  - SEO
+  - Performance Marketing
+  - Content Marketing
+  - Customer Success
+  - Technical Support
+  - Partnerships
+  - Salesforce
+  - HubSpot

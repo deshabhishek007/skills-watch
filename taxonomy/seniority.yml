@@ -1,0 +1,21 @@
+# Seniority classification: ordered rules, first match on title wins.
+# Unknown when nothing matches — never forced.
+levels:
+  - name: Intern
+    patterns: ["intern\\b", "internship", "working student", "apprentice"]
+  - name: Executive
+    patterns: ["\\bCEO\\b", "\\bCTO\\b", "\\bCFO\\b", "\\bCOO\\b", "\\bCPO\\b", "\\bCISO\\b", "\\bCMO\\b", "chief"]
+  - name: VP
+    patterns: ["\\bVP\\b", "vice president"]
+  - name: Director
+    patterns: ["director", "head of"]
+  - name: Manager
+    patterns: ["manager\\b", "\\blead(er)?ship\\b", "team lead"]
+  - name: Lead / Staff
+    patterns: ["staff", "principal", "\\blead\\b", "architect"]
+  - name: Senior
+    patterns: ["senior", "\\bsr\\.?\\b", "\\bIII\\b", "\\bIV\\b"]
+  - name: Mid Level
+    patterns: ["mid.level", "intermediate", "\\bII\\b"]
+  - name: Entry Level
+    patterns: ["junior", "\\bjr\\.?\\b", "entry.level", "graduate", "associate\\b", "\\bI\\b", "trainee"]

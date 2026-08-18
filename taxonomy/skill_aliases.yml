@@ -1,0 +1,58 @@
+# alias -> canonical skill. An alias and its canonical form are never counted separately.
+Amazon Web Services: AWS
+AWS Cloud: AWS
+Microsoft Azure Cloud: Microsoft Azure
+MS Azure: Microsoft Azure
+Azure: Microsoft Azure
+Google Cloud Platform: Google Cloud
+GCP: Google Cloud
+K8s: Kubernetes
+K8S: Kubernetes
+Generative Artificial Intelligence: Generative AI
+GenAI: Generative AI
+Large Language Models: LLMs
+Large Language Model: LLMs
+LLM: LLMs
+Retrieval-Augmented Generation: RAG
+Retrieval Augmented Generation: RAG
+Machine-Learning: Machine Learning
+ML Ops: MLOps
+Postgres: PostgreSQL
+MS SQL: SQL
+NodeJS: Node.js
+Node: Node.js
+ReactJS: React
+React.js: React
+VueJS: Vue.js
+Vue: Vue.js
+Typescript: TypeScript
+Javascript: JavaScript
+Golang: Go
+WP: WordPress
+Woo Commerce: WooCommerce
+Woo: WooCommerce
+WPCLI: WP-CLI
+WP CLI: WP-CLI
+Multisite: WordPress Multisite
+Content Delivery Network: CDN
+Continuous Integration: CI/CD
+Continuous Delivery: CI/CD
+Continuous Deployment: CI/CD
+CICD: CI/CD
+Search Engine Optimization: SEO
+Search Engine Optimisation: SEO
+Site Reliability: Observability
+Monitoring: Observability
+LEMP: Nginx
+LAMP: Apache
+Litespeed: LiteSpeed
+OpenLiteSpeed: LiteSpeed
+Web Application Firewall: WAF
+Pen Testing: Penetration Testing
+Pentesting: Penetration Testing
+SOC2: SOC 2
+Vector Database: Vector Databases
+Vector DB: Vector Databases
+Terraform Cloud: Terraform
+Distributed Denial of Service: DDoS Mitigation
+DDoS: DDoS Mitigation

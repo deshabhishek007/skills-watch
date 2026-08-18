@@ -4,8 +4,9 @@
 
 ![Skills Watch — the skills your industry is actually hiring for](assets/hero.png)
 
-*The interactive report page ships in [`docs/index.html`](docs/index.html) with three
-styles — Minimal, A11y, and Bold — switchable on the page or via `?skin=bold`.*
+**[View the live report →](https://deshabhishek007.github.io/skills-watch/)** — three
+styles (Minimal, A11y, Bold), switchable on the page or via `?skin=bold`. The page
+ships in [`docs/index.html`](docs/index.html) so your fork gets its own.
 
 Point it at a CSV of companies — WordPress hosts, banks, SaaS vendors, any
 competitive set — and it collects their open jobs from official careers sources,

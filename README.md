@@ -29,25 +29,66 @@ Outputs land in `output/` (see below); `--snapshot` also archives them to
 Useful flags: `--company X` / `--sector Y` (restrict the run),
 `--snapshot-date YYYY-MM-DD`, `--force-snapshot` (same-day re-run), `--no-report`.
 
-## Watch your own industry
+## Watch your own industry (fork this)
 
-1. Copy `companies/example.csv` and fill in your companies. Only `company` is
-   required:
+This repo is designed to be forked for personal use. The Managed WordPress
+Hosting dataset is just the demo — your fork watches whatever sector you care
+about.
+
+1. **Fork and clone**, then install (see Quick start).
+2. **Create your company list**, e.g. `companies/my-sector.csv`. Only the
+   `company` column is required:
 
    ```csv
    company,website,careers_url,sector,enabled,notes,source_type,source_ref
    Acme Corp,https://acme.com,https://acme.com/careers,SaaS,true,,greenhouse,acmecorp
    ```
 
-2. Set `source_type`/`source_ref` where you know the ATS (see table below).
-   Everything else falls back to the `generic` HTML collector, which also
-   detects embedded ATS boards and tells you what to configure.
-3. Run the command above with your CSV.
-4. Optionally schedule it: this repo includes a Claude Code routine
-   (`routines/skills-watch.md`) that runs the pipeline, quality-checks the
-   results, writes the report narrative, and commits the snapshot. Schedule it
-   with Claude Code's scheduled agents (`/schedule` → point it at the routine),
-   cron, or any runner you like — the pipeline itself needs no LLM.
+3. **Run it:**
+
+   ```bash
+   .venv/bin/python -m skills_watch analyse --companies companies/my-sector.csv --snapshot
+   ```
+
+4. **Commit the results.** `output/` and `snapshots/<date>/` are meant to be
+   committed — that's your history, and the next run diffs against it.
+5. **Optionally schedule it** so snapshots accrue monthly. This repo includes a
+   Claude Code routine (`routines/skills-watch.md`) that runs the pipeline,
+   quality-checks the results, writes the report narrative, and commits the
+   snapshot — point a Claude Code scheduled agent (`/schedule`) at it. Plain
+   cron works too; the pipeline itself needs no LLM.
+
+### Adding a company — three levels
+
+Each row works at whatever level of detail you have:
+
+- **Just a name.** The row is valid, but until you add a `careers_url` there is
+  nothing to collect, and the run reports it as `failed` rather than guessing.
+- **Name + `careers_url`.** The `generic` collector scrapes the page
+  best-effort. If the page merely embeds a known ATS board, the run stops that
+  company with an `unsupported: page embeds ATS …` message telling you exactly
+  what to put in `source_type`/`source_ref`.
+- **Name + `source_type` + `source_ref`** (best). Uses the ATS's structured
+  JSON API: stable job IDs, locations, departments, full descriptions.
+
+**How to find a company's ATS in 30 seconds:** open their careers page, click
+any job posting, and look at the URL you land on (or the Apply link):
+
+| URL looks like | `source_type` | `source_ref` |
+|---|---|---|
+| `boards.greenhouse.io/acme` or `job-boards.greenhouse.io/acme` | `greenhouse` | `acme` |
+| `jobs.lever.co/acme/...` | `lever` | `acme` |
+| `acme.wd1.myworkdayjobs.com/en-US/External/...` | `workday` | `acme.wd1.myworkdayjobs.com\|External` |
+| `apply.workable.com/acme/j/...` | `workable` | `acme` |
+| `acme.bamboohr.com/careers/...` | `bamboohr` | `acme` |
+| none of the above | `generic` | *(leave empty)* |
+
+Slugs aren't always the obvious company name (Rocket.net's Workable slug is
+`rocket-dot-n-et`), so always copy it from a real job URL rather than guessing.
+
+You can mix sectors in one CSV — fill the `sector` column and each sector is
+aggregated separately in `sector_summary.csv` / `sector_skills.csv`. Set
+`enabled=false` to park a company without deleting the row.
 
 ## Supported collectors
 

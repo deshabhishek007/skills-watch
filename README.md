@@ -52,11 +52,17 @@ about.
 
 4. **Commit the results.** `output/` and `snapshots/<date>/` are meant to be
    committed — that's your history, and the next run diffs against it.
-5. **Optionally schedule it** so snapshots accrue monthly. This repo includes a
-   Claude Code routine (`routines/skills-watch.md`) that runs the pipeline,
+5. **Optionally schedule it** so snapshots accrue. This repo includes a Claude
+   Code routine (`routines/skills-watch.md`) that runs the pipeline,
    quality-checks the results, writes the report narrative, and commits the
-   snapshot — point a Claude Code scheduled agent (`/schedule`) at it. Plain
-   cron works too; the pipeline itself needs no LLM.
+   snapshot. Schedule it with a **local** Claude Code scheduled task (ask
+   Claude to "run routines/skills-watch.md on the 1st and 15th"), or plain
+   cron — the pipeline itself needs no LLM. Biweekly is a good cadence: many
+   postings live only a few weeks, so monthly runs miss short-lived vacancies,
+   while biweekly keeps snapshot-to-snapshot changes meaningful. Note that
+   Claude's *cloud* scheduled agents currently can't run the collection —
+   their sandbox blocks outbound requests to careers sites — so schedule
+   somewhere with normal internet access (your machine or your own CI).
 
 ### Adding a company — three levels
 

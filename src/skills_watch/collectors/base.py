@@ -18,7 +18,7 @@ import requests
 
 from ..models import CompanyConfig, Job
 
-USER_AGENT = "skills-watch/0.1 (open-source hiring research; +https://github.com/abhisheksharma/skills-watch)"
+USER_AGENT = "skills-watch/0.1 (open-source hiring research; +https://github.com/deshabhishek007/skills-watch)"
 REQUEST_DELAY_SECONDS = 1.5
 TIMEOUT_SECONDS = 30
 

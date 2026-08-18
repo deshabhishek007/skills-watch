@@ -30,7 +30,9 @@ class WorkableCollector(Collector):
                 shortcode = j.get("shortcode")
                 description = None
                 try:
-                    detail = self.client.get_json(f"{base}/jobs/{shortcode}",
+                    # Listing is the v3 widget API, but job detail only exists on v2
+                    detail_base = base.replace("/api/v3/", "/api/v2/")
+                    detail = self.client.get_json(f"{detail_base}/jobs/{shortcode}",
                                                   headers={"Accept": "application/json"})
                     parts = [detail.get("description") or "", detail.get("requirements") or "",
                              detail.get("benefits") or ""]

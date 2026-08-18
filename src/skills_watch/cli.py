@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from collections import Counter
 from datetime import date
@@ -63,6 +64,10 @@ def analyse(args: argparse.Namespace) -> int:
             statuses.append(CollectionStatus(cfg.company, "failed", source=source,
                                              detail=str(e)))
             continue
+        except Exception as e:  # a collector bug must not kill the whole run
+            statuses.append(CollectionStatus(cfg.company, "failed", source=source,
+                                             detail=f"collector error: {type(e).__name__}: {e}"))
+            continue
         if not jobs:
             statuses.append(CollectionStatus(cfg.company, "no_open_jobs", source=source))
             continue
@@ -75,9 +80,16 @@ def analyse(args: argparse.Namespace) -> int:
 
     unique_jobs, removed = dedup_jobs(all_jobs)
 
+    def is_self_brand(skill: str, company_name: str) -> bool:
+        # A company's own brand in its postings is boilerplate, not a skill signal
+        # (every DigitalOcean job "mentions" DigitalOcean).
+        norm = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
+        return norm(skill) == norm(company_name)
+
     for job in unique_jobs:
         text = f"{job.title}\n{job.description or ''}"
-        job.skills = taxonomy.extract(text)
+        job.skills = [s for s in taxonomy.extract(text)
+                      if not is_self_brand(s, job.company)]
         job.function = fn_classifier.classify(job.title, job.department)
         job.seniority = sen_classifier.classify(job.title)
         job.remote_classification = classify_remote(

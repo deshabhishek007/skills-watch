@@ -1,0 +1,17 @@
+company,status,jobs_found,source,detail
+WP Engine,success,11,workday,
+Automattic,success,19,automattic,
+Pressable,success,2,greenhouse,
+Pantheon,success,30,greenhouse,
+Kinsta,success,3,lever,
+SiteGround,success,2,lever,
+Liquid Web,no_open_jobs,0,generic,
+GoDaddy,success,26,greenhouse,
+DigitalOcean,success,143,greenhouse,
+Newfold Digital,success,40,workday,
+Rocket.net,success,3,workable,
+Servebolt,success,2,generic,
+GridPane,no_open_jobs,0,generic,
+Convesio,disabled,0,,
+10Web,no_open_jobs,0,bamboohr,
+WPX Hosting,failed,0,generic,HTTP 403 for https://join.wpx.net/

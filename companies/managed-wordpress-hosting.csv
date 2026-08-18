@@ -1,17 +1,17 @@
 company,website,careers_url,sector,enabled,notes,source_type,source_ref
 WP Engine,https://wpengine.com,https://wpengine.com/careers/,Managed WordPress Hosting,true,Includes Flywheel,workday,wpengine.wd1.myworkdayjobs.com|WP_Engine
-Automattic,https://automattic.com,https://automattic.com/work-with-us/,Managed WordPress Hosting,true,"WordPress.com, WordPress VIP; ATS unconfirmed (JS-rendered listings)",greenhouse,automattic
+Automattic,https://automattic.com,https://automattic.com/work-with-us/jobs/,Managed WordPress Hosting,true,"WordPress.com, WordPress VIP; Greenhouse data embedded in page (no public board API)",automattic,
 Pressable,https://pressable.com,https://boards.greenhouse.io/pressable,Managed WordPress Hosting,true,Automattic subsidiary with its own Greenhouse board,greenhouse,pressable
 Pantheon,https://pantheon.io,https://pantheon.io/about/careers/openings,Managed WordPress Hosting,true,,greenhouse,pantheon
 Kinsta,https://kinsta.com,https://kinsta.com/careers/,Managed WordPress Hosting,true,,lever,kinsta
 SiteGround,https://www.siteground.com,https://www.siteground.com/careers,Managed WordPress Hosting,true,,lever,siteground
-Liquid Web,https://www.liquidweb.com,https://jobs.jobvite.com/liquidweb,Managed WordPress Hosting,true,Includes Nexcess; Jobvite board scraped generically,generic,
+Liquid Web,https://www.liquidweb.com,https://jobs.jobvite.com/liquidweb,Managed WordPress Hosting,true,Includes Nexcess; Jobvite board verified empty on 2026-08-18,generic,
 GoDaddy,https://www.godaddy.com,https://careers.godaddy.com,Managed WordPress Hosting,true,Owns Pagely; broad registrar/hosting business,greenhouse,godaddy
 DigitalOcean,https://www.digitalocean.com,https://www.digitalocean.com/careers/open-roles,Managed WordPress Hosting,true,Owns Cloudways; Greenhouse slug unresolved (JS-rendered),greenhouse,digitalocean98
 Newfold Digital,https://newfold.com,https://web.wd1.myworkdayjobs.com/ExternalCareerSite,Managed WordPress Hosting,true,"Bluehost, HostGator",workday,web.wd1.myworkdayjobs.com|ExternalCareerSite
-Rocket.net,https://rocket.net,https://rocket.net/careers/,Managed WordPress Hosting,true,Custom WordPress careers page,generic,
+Rocket.net,https://rocket.net,https://rocket.net/careers/,Managed WordPress Hosting,true,,workable,rocket-dot-n-et
 Servebolt,https://servebolt.com,https://careers.servebolt.com/,Managed WordPress Hosting,true,Teamtailor site; scraped generically,generic,
 GridPane,https://gridpane.com,https://gridpane.com/careers/,Managed WordPress Hosting,true,"Careers page says ""details coming soon"" — no listings",generic,
-Convesio,https://convesio.com,,Managed WordPress Hosting,true,No careers page found (404),generic,
+Convesio,https://convesio.com,,Managed WordPress Hosting,false,No careers page found (404) — excluded until one exists,generic,
 10Web,https://10web.io,https://10web.bamboohr.com/careers,Managed WordPress Hosting,true,Board live but empty at last check,bamboohr,10web
-WPX Hosting,https://wpx.net,https://join.wpx.net/,Managed WordPress Hosting,true,Custom site; no openings at last check,generic,
+WPX Hosting,https://wpx.net,https://join.wpx.net/,Managed WordPress Hosting,true,join.wpx.net blocks automated requests (403); not collected,generic,

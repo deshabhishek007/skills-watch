@@ -1,0 +1,83 @@
+snapshot_date,sector,skill,category,jobs_requiring_skill,jobs_analysed,demand_rate
+2026-08-18,Managed WordPress Hosting,Observability,Infrastructure,80,281,28.5
+2026-08-18,Managed WordPress Hosting,Python,Programming,79,281,28.1
+2026-08-18,Managed WordPress Hosting,WordPress,WordPress,79,281,28.1
+2026-08-18,Managed WordPress Hosting,Kubernetes,Infrastructure,72,281,25.6
+2026-08-18,Managed WordPress Hosting,Go,Programming,48,281,17.1
+2026-08-18,Managed WordPress Hosting,LLMs,AI,46,281,16.4
+2026-08-18,Managed WordPress Hosting,AWS,Cloud,45,281,16.0
+2026-08-18,Managed WordPress Hosting,Terraform,Infrastructure,44,281,15.7
+2026-08-18,Managed WordPress Hosting,Linux,Infrastructure,39,281,13.9
+2026-08-18,Managed WordPress Hosting,CI/CD,Infrastructure,38,281,13.5
+2026-08-18,Managed WordPress Hosting,Google Cloud,Cloud,37,281,13.2
+2026-08-18,Managed WordPress Hosting,Product Management,Business,36,281,12.8
+2026-08-18,Managed WordPress Hosting,SQL,Data,35,281,12.5
+2026-08-18,Managed WordPress Hosting,Incident Response,Security,34,281,12.1
+2026-08-18,Managed WordPress Hosting,JavaScript,Programming,32,281,11.4
+2026-08-18,Managed WordPress Hosting,Node.js,Programming,32,281,11.4
+2026-08-18,Managed WordPress Hosting,MySQL,Data,31,281,11.0
+2026-08-18,Managed WordPress Hosting,Salesforce,Business,31,281,11.0
+2026-08-18,Managed WordPress Hosting,Microsoft Azure,Cloud,28,281,10.0
+2026-08-18,Managed WordPress Hosting,Customer Success,Business,27,281,9.6
+2026-08-18,Managed WordPress Hosting,Technical Support,Business,25,281,8.9
+2026-08-18,Managed WordPress Hosting,Account Management,Business,23,281,8.2
+2026-08-18,Managed WordPress Hosting,Git,Infrastructure,21,281,7.5
+2026-08-18,Managed WordPress Hosting,WooCommerce,WordPress,21,281,7.5
+2026-08-18,Managed WordPress Hosting,Docker,Infrastructure,20,281,7.1
+2026-08-18,Managed WordPress Hosting,PHP,Programming,19,281,6.8
+2026-08-18,Managed WordPress Hosting,Partnerships,Business,19,281,6.8
+2026-08-18,Managed WordPress Hosting,DNS,Infrastructure,18,281,6.4
+2026-08-18,Managed WordPress Hosting,Ansible,Infrastructure,17,281,6.0
+2026-08-18,Managed WordPress Hosting,PostgreSQL,Data,17,281,6.0
+2026-08-18,Managed WordPress Hosting,Bash,Programming,15,281,5.3
+2026-08-18,Managed WordPress Hosting,Apache,Infrastructure,14,281,5.0
+2026-08-18,Managed WordPress Hosting,SOC 2,Security,14,281,5.0
+2026-08-18,Managed WordPress Hosting,MongoDB,Data,13,281,4.6
+2026-08-18,Managed WordPress Hosting,Prometheus,Infrastructure,13,281,4.6
+2026-08-18,Managed WordPress Hosting,RAG,AI,13,281,4.6
+2026-08-18,Managed WordPress Hosting,Generative AI,AI,12,281,4.3
+2026-08-18,Managed WordPress Hosting,Java,Programming,12,281,4.3
+2026-08-18,Managed WordPress Hosting,Redis,Data,12,281,4.3
+2026-08-18,Managed WordPress Hosting,TypeScript,Programming,12,281,4.3
+2026-08-18,Managed WordPress Hosting,AI Agents,AI,11,281,3.9
+2026-08-18,Managed WordPress Hosting,Cloudflare,Cloud,11,281,3.9
+2026-08-18,Managed WordPress Hosting,Grafana,Infrastructure,11,281,3.9
+2026-08-18,Managed WordPress Hosting,HubSpot,Business,11,281,3.9
+2026-08-18,Managed WordPress Hosting,Machine Learning,AI,11,281,3.9
+2026-08-18,Managed WordPress Hosting,Project Management,Business,10,281,3.6
+2026-08-18,Managed WordPress Hosting,React,Programming,10,281,3.6
+2026-08-18,Managed WordPress Hosting,WAF,Security,10,281,3.6
+2026-08-18,Managed WordPress Hosting,CDN,Infrastructure,9,281,3.2
+2026-08-18,Managed WordPress Hosting,Looker,Data,9,281,3.2
+2026-08-18,Managed WordPress Hosting,SEO,Business,9,281,3.2
+2026-08-18,Managed WordPress Hosting,Load Balancing,Infrastructure,8,281,2.8
+2026-08-18,Managed WordPress Hosting,WordPress VIP,WordPress,8,281,2.8
+2026-08-18,Managed WordPress Hosting,Application Security,Security,7,281,2.5
+2026-08-18,Managed WordPress Hosting,Snowflake,Data,7,281,2.5
+2026-08-18,Managed WordPress Hosting,Nginx,Infrastructure,6,281,2.1
+2026-08-18,Managed WordPress Hosting,Ruby,Programming,6,281,2.1
+2026-08-18,Managed WordPress Hosting,PyTorch,AI,5,281,1.8
+2026-08-18,Managed WordPress Hosting,Rust,Programming,5,281,1.8
+2026-08-18,Managed WordPress Hosting,TensorFlow,AI,5,281,1.8
+2026-08-18,Managed WordPress Hosting,cPanel,Infrastructure,5,281,1.8
+2026-08-18,Managed WordPress Hosting,MLOps,AI,4,281,1.4
+2026-08-18,Managed WordPress Hosting,MariaDB,Data,4,281,1.4
+2026-08-18,Managed WordPress Hosting,WP-CLI,WordPress,4,281,1.4
+2026-08-18,Managed WordPress Hosting,dbt,Data,4,281,1.4
+2026-08-18,Managed WordPress Hosting,DDoS Mitigation,Security,3,281,1.1
+2026-08-18,Managed WordPress Hosting,Elasticsearch,Data,3,281,1.1
+2026-08-18,Managed WordPress Hosting,Penetration Testing,Security,3,281,1.1
+2026-08-18,Managed WordPress Hosting,Tableau,Data,3,281,1.1
+2026-08-18,Managed WordPress Hosting,Content Marketing,Business,2,281,0.7
+2026-08-18,Managed WordPress Hosting,Gutenberg,WordPress,2,281,0.7
+2026-08-18,Managed WordPress Hosting,Prompt Engineering,AI,2,281,0.7
+2026-08-18,Managed WordPress Hosting,Risk Management,Business,2,281,0.7
+2026-08-18,Managed WordPress Hosting,Vector Databases,AI,2,281,0.7
+2026-08-18,Managed WordPress Hosting,Vue.js,Programming,2,281,0.7
+2026-08-18,Managed WordPress Hosting,WordPress Multisite,WordPress,2,281,0.7
+2026-08-18,Managed WordPress Hosting,B2B Sales,Business,1,281,0.4
+2026-08-18,Managed WordPress Hosting,C++,Programming,1,281,0.4
+2026-08-18,Managed WordPress Hosting,Databricks,Data,1,281,0.4
+2026-08-18,Managed WordPress Hosting,Performance Marketing,Business,1,281,0.4
+2026-08-18,Managed WordPress Hosting,Plesk,Infrastructure,1,281,0.4
+2026-08-18,Managed WordPress Hosting,Power BI,Data,1,281,0.4

@@ -11,9 +11,11 @@ Programming:
   - JavaScript
   - TypeScript
   - PHP
+  # "Go" alone false-positives on go-to-market / "go above and beyond", so the
+  # bare word only counts next to list punctuation or language context.
   - name: Go
     case_sensitive: true
-    match: "Go(?:lang)?"
+    match: "Golang|Go(?=\\s*[,/.)\\n]|\\s*$|\\s+(?:programming|language|services?|microservices|developers?|engineers?))"
   - Rust
   - "C#"
   - "C++"

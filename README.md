@@ -15,7 +15,7 @@ industry: see [`output/report.md`](output/report.md) and the history in
 ## Quick start
 
 ```bash
-git clone https://github.com/YOURNAME/skills-watch && cd skills-watch
+git clone https://github.com/deshabhishek007/skills-watch && cd skills-watch
 python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
 
 .venv/bin/python -m skills_watch analyse \

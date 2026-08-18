@@ -1,0 +1,12 @@
+snapshot_date,company,sector,open_jobs,top_skills,top_function,remote_share_pct
+2026-08-18,DigitalOcean,Managed WordPress Hosting,143,Kubernetes 36.4%; Python 35.7%; Observability 34.3%; Go 24.5%; LLMs 22.4%,Engineering,0.0
+2026-08-18,Newfold Digital,Managed WordPress Hosting,40,WordPress 30.0%; SEO 22.5%; DNS 15.0%; Technical Support 15.0%; Kubernetes 12.5%,Sales,45.0
+2026-08-18,Pantheon,Managed WordPress Hosting,30,WordPress 96.7%; Google Cloud 26.7%; Python 26.7%; JavaScript 23.3%; AWS 20.0%,Engineering,86.7
+2026-08-18,GoDaddy,Managed WordPress Hosting,26,Observability 46.2%; AWS 42.3%; LLMs 38.5%; Python 38.5%; CI/CD 34.6%,Engineering,0.0
+2026-08-18,Automattic,Managed WordPress Hosting,19,WooCommerce 100.0%; WordPress 100.0%; Salesforce 42.1%; WordPress VIP 42.1%; Customer Success 31.6%,Sales,5.3
+2026-08-18,WP Engine,Managed WordPress Hosting,11,WordPress 100.0%; Salesforce 54.5%; Account Management 36.4%; Python 27.3%; SQL 27.3%,Other,0.0
+2026-08-18,Kinsta,Managed WordPress Hosting,3,WordPress 100.0%; CDN 33.3%; DNS 33.3%; HubSpot 33.3%; JavaScript 33.3%,Design,100.0
+2026-08-18,Rocket.net,Managed WordPress Hosting,3,Apache 100.0%; CDN 100.0%; Cloudflare 100.0%; DNS 100.0%; Linux 100.0%,Customer Support,100.0
+2026-08-18,Pressable,Managed WordPress Hosting,2,Account Management 100.0%; HubSpot 100.0%; WooCommerce 100.0%; WordPress 100.0%,Sales,100.0
+2026-08-18,SiteGround,Managed WordPress Hosting,2,JavaScript 50.0%; React 50.0%; TypeScript 50.0%,Design,0.0
+2026-08-18,Servebolt,Managed WordPress Hosting,2,Apache 100.0%; Ansible 50.0%; Bash 50.0%; CI/CD 50.0%; DNS 50.0%,Finance,0.0

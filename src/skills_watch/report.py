@@ -22,7 +22,8 @@ def _table(headers: list[str], rows: list[list]) -> str:
 def generate(snapshot_date: str, sector_label: str, jobs: list[Job],
              companies: list[CompanyStats], statuses: list[CollectionStatus],
              category_of: dict[str, str], trend_rows: list[dict] | None = None,
-             previous_date: str | None = None) -> str:
+             previous_date: str | None = None,
+             chart_paths: list[str] | None = None) -> str:
     total = len(jobs)
     ok = [s for s in statuses if s.status in ("success", "partial")]
     parts: list[str] = []
@@ -55,7 +56,10 @@ def generate(snapshot_date: str, sector_label: str, jobs: list[Job],
         add("## No jobs collected\n\nNo analysable jobs were collected in this run.")
         return "\n".join(parts)
 
+    chart_paths = chart_paths or []
     add("## Top Skills\n")
+    if "charts/top_skills.svg" in chart_paths:
+        add("![Top skills by demand rate](charts/top_skills.svg)\n")
     add("Share of all analysed jobs that mention each skill:\n")
     add(_table(["Skill", "Category", "Jobs", "Demand rate"],
                [[s, category_of.get(s, "—"), n, f"{r}%"]
@@ -117,6 +121,13 @@ def generate(snapshot_date: str, sector_label: str, jobs: list[Job],
                [[g, n, f"{round(n / total * 100, 1)}%"]
                 for g, n in geo.most_common()]))
     add("")
+
+    trend_charts = [p for p in ("charts/skill_trends.svg", "charts/company_jobs.svg")
+                    if p in chart_paths]
+    if trend_charts:
+        add("## Demand Over Time\n")
+        for p in trend_charts:
+            add(f"![{p.split('/')[-1].removesuffix('.svg').replace('_', ' ')}]({p})\n")
 
     if trend_rows and previous_date:
         add(f"## Changes Since Previous Snapshot ({previous_date})\n")

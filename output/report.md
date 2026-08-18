@@ -25,11 +25,11 @@ Public job postings were collected from official careers sources for 16 companie
 | GridPane | no_open_jobs | 0 | generic |
 | Convesio | disabled | 0 | — |
 | 10Web | no_open_jobs | 0 | bamboohr |
-| WPX Hosting | failed | 0 | generic |
-
-*1 of 16 companies could not be collected; their hiring is **not** included in the numbers below.*
+| WPX Hosting | no_open_jobs | 0 | generic |
 
 ## Top Skills
+
+![Top skills by demand rate](charts/top_skills.svg)
 
 Share of all analysed jobs that mention each skill:
 

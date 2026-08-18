@@ -9,7 +9,7 @@ from collections import Counter
 from datetime import date
 from pathlib import Path
 
-from . import analysis, outputs, report, snapshots
+from . import analysis, charts, outputs, report, snapshots
 from .collectors import get_collector
 from .collectors.base import FetchError, HttpClient
 from .collectors.generic import EmbeddedATSFound
@@ -127,11 +127,31 @@ def analyse(args: argparse.Namespace) -> int:
                                 sector_jobs, statuses, taxonomy.category_of,
                                 trend_rows, hiring_trend_rows)
 
+    # Chart history: prior snapshots + this run
+    skill_history: list[tuple[str, dict[str, float]]] = []
+    company_history: list[tuple[str, dict[str, int]]] = []
+    for d in snapshots.list_snapshots(snapshots_dir):
+        if d >= snapshot_date:
+            continue
+        srows = snapshots.load_snapshot_csv(snapshots_dir, d, "sector_skills.csv")
+        crows = snapshots.load_snapshot_csv(snapshots_dir, d, "company_summary.csv")
+        if srows:
+            skill_history.append((d, {r["skill"]: float(r["demand_rate"]) for r in srows}))
+        if crows:
+            company_history.append((d, {r["company"]: int(r["open_jobs"]) for r in crows}))
+    current_rates = analysis.demand_rates(unique_jobs)
+    skill_history.append((snapshot_date, {s: r for s, _, r in current_rates}))
+    company_history.append((snapshot_date, {c.company: c.open_jobs for c in company_stats}))
+    chart_paths = charts.write_charts(output_dir, current_rates, len(unique_jobs),
+                                      snapshot_date, skill_history, company_history)
+    written += chart_paths
+
     if not args.no_report:
         sector_label = args.sector or next(
             (s for s in {c.sector for c in companies} if s), "Custom Company Set")
         md = report.generate(snapshot_date, sector_label, unique_jobs, company_stats,
-                             statuses, taxonomy.category_of, trend_rows, prev_date)
+                             statuses, taxonomy.category_of, trend_rows, prev_date,
+                             chart_paths)
         (output_dir / "report.md").write_text(md, encoding="utf-8")
         written.append("report.md")
 

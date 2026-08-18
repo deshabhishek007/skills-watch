@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380"
+     viewBox="0 0 720 380" font-family='system-ui, -apple-system, "Segoe UI", sans-serif'>
+  <rect x="0.5" y="0.5" width="719" height="379" rx="8"
+        fill="#fcfcfb" stroke="rgba(11,11,11,0.10)"/>
+  <text x="20" y="30" font-size="15" font-weight="600" fill="#0b0b0b">Top skills by demand rate</text>
+  <text x="20" y="48" font-size="12" fill="#52514e">Share of 281 unique open jobs mentioning each skill · snapshot 2026-08-18</text>
+  <text x="105" y="79" font-size="12" fill="#52514e" text-anchor="end">Observability</text>
+  <path d="M113,68 h533.0 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-533.0 z" fill="#2a78d6"/>
+  <text x="656.0" y="79" font-size="12" fill="#0b0b0b" font-weight="600">28.5%</text>
+  <text x="105" y="109" font-size="12" fill="#52514e" text-anchor="end">Python</text>
+  <path d="M113,98 h525.5 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-525.5 z" fill="#2a78d6"/>
+  <text x="648.5" y="109" font-size="12" fill="#0b0b0b" font-weight="600">28.1%</text>
+  <text x="105" y="139" font-size="12" fill="#52514e" text-anchor="end">WordPress</text>
+  <path d="M113,128 h525.5 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-525.5 z" fill="#2a78d6"/>
+  <text x="648.5" y="139" font-size="12" fill="#0b0b0b" font-weight="600">28.1%</text>
+  <text x="105" y="169" font-size="12" fill="#52514e" text-anchor="end">Kubernetes</text>
+  <path d="M113,158 h478.4 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-478.4 z" fill="#2a78d6"/>
+  <text x="601.4" y="169" font-size="12" fill="#0b0b0b" font-weight="600">25.6%</text>
+  <text x="105" y="199" font-size="12" fill="#52514e" text-anchor="end">Go</text>
+  <path d="M113,188 h318.2 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-318.2 z" fill="#2a78d6"/>
+  <text x="441.2" y="199" font-size="12" fill="#0b0b0b" font-weight="600">17.1%</text>
+  <text x="105" y="229" font-size="12" fill="#52514e" text-anchor="end">LLMs</text>
+  <path d="M113,218 h305.0 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-305.0 z" fill="#2a78d6"/>
+  <text x="428.0" y="229" font-size="12" fill="#0b0b0b" font-weight="600">16.4%</text>
+  <text x="105" y="259" font-size="12" fill="#52514e" text-anchor="end">AWS</text>
+  <path d="M113,248 h297.5 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-297.5 z" fill="#2a78d6"/>
+  <text x="420.5" y="259" font-size="12" fill="#0b0b0b" font-weight="600">16.0%</text>
+  <text x="105" y="289" font-size="12" fill="#52514e" text-anchor="end">Terraform</text>
+  <path d="M113,278 h291.8 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-291.8 z" fill="#2a78d6"/>
+  <text x="414.8" y="289" font-size="12" fill="#0b0b0b" font-weight="600">15.7%</text>
+  <text x="105" y="319" font-size="12" fill="#52514e" text-anchor="end">Linux</text>
+  <path d="M113,308 h257.9 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-257.9 z" fill="#2a78d6"/>
+  <text x="380.9" y="319" font-size="12" fill="#0b0b0b" font-weight="600">13.9%</text>
+  <text x="105" y="349" font-size="12" fill="#52514e" text-anchor="end">CI/CD</text>
+  <path d="M113,338 h250.4 a4,4 0 0 1 4,4 v4 a4,4 0 0 1 -4,4 h-250.4 z" fill="#2a78d6"/>
+  <text x="373.4" y="349" font-size="12" fill="#0b0b0b" font-weight="600">13.5%</text>
+  <line x1="113" y1="60" x2="113" y2="364" stroke="#c3c2b7"/>
+</svg>

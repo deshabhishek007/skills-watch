@@ -35,6 +35,9 @@ def save_snapshot(output_dir: str | Path, snapshots_dir: str | Path,
     report = Path(output_dir) / "report.md"
     if report.exists():
         shutil.copy2(report, dest / "report.md")
+    charts_dir = Path(output_dir) / "charts"
+    if charts_dir.exists():
+        shutil.copytree(charts_dir, dest / "charts")  # report.md references charts/
     return dest
 
 

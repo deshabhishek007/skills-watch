@@ -2,6 +2,11 @@
 
 > Turn public company job openings into structured hiring, skill and technology intelligence.
 
+![Skills Watch — the skills your industry is actually hiring for](assets/hero.png)
+
+*The interactive report page ships in [`docs/index.html`](docs/index.html) with three
+styles — Minimal, A11y, and Bold — switchable on the page or via `?skin=bold`.*
+
 Point it at a CSV of companies — WordPress hosts, banks, SaaS vendors, any
 competitive set — and it collects their open jobs from official careers sources,
 extracts and normalises skills, and produces CSV datasets plus a Markdown

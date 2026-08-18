@@ -1,0 +1,259 @@
+<meta charset="utf-8">
+<title>Skills Watch</title>
+<style>
+  /* ---------- Skin token sets. Each skin is a complete, self-painted world. ---------- */
+  :root, [data-skin="minimal"] {
+    --bg: #fafaf8; --bg-2: #ffffff; --ink: #141412; --ink-2: #5a584f;
+    --muted: #8b897f; --line: #e3e2db; --accent: #2a78d6; --accent-ink: #ffffff;
+    --bar: #2a78d6; --bar-track: #eeede6; --chip: #f1f0ea;
+    --radius: 10px; --shadow: 0 1px 2px rgba(20,20,18,.05);
+    --display: 300 1 "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    --body-size: 16px; --hero-weight: 250; --hero-track: -0.02em;
+    --eyebrow-track: 0.18em; --link-deco: none; --bar-h: 12px; --focus: #2a78d6;
+  }
+  [data-skin="a11y"] {
+    --bg: #ffffff; --bg-2: #ffffff; --ink: #000000; --ink-2: #1f1f1f;
+    --muted: #3d3d3d; --line: #757575; --accent: #0b57d0; --accent-ink: #ffffff;
+    --bar: #1c5cab; --bar-track: #e8e8e8; --chip: #f0f0f0;
+    --radius: 6px; --shadow: none;
+    --body-size: 18.5px; --hero-weight: 800; --hero-track: 0;
+    --eyebrow-track: 0.06em; --link-deco: underline; --bar-h: 22px; --focus: #b60072;
+  }
+  [data-skin="bold"] {
+    --bg: #12101c; --bg-2: #1a1727; --ink: #f4f2ff; --ink-2: #c9c5dd;
+    --muted: #8d88a6; --line: #2c2840; --accent: #ff5c47; --accent-ink: #16060a;
+    --bar: #23d5e8; --bar-track: #221e35; --chip: #221e35;
+    --radius: 14px; --shadow: 0 12px 40px rgba(0,0,0,.35);
+    --body-size: 16.5px; --hero-weight: 900; --hero-track: -0.03em;
+    --eyebrow-track: 0.22em; --link-deco: none; --bar-h: 14px; --focus: #23d5e8;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 var(--body-size)/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    transition: background .25s ease, color .25s ease;
+  }
+  a { color: var(--accent); text-decoration: var(--link-deco); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 28px 24px 80px; }
+
+  /* ---------- Skin switcher ---------- */
+  .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; letter-spacing: -0.01em; font-size: 18px; }
+  .brand .dot { color: var(--accent); }
+  .skins { display: flex; gap: 4px; background: var(--chip); padding: 4px; border-radius: 999px; }
+  .skins button {
+    border: 0; background: transparent; color: var(--ink-2); font: 600 13.5px/1 system-ui, sans-serif;
+    padding: 9px 16px; border-radius: 999px; cursor: pointer;
+  }
+  .skins button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+
+  /* ---------- Hero ---------- */
+  .hero { margin: 72px 0 24px; }
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: var(--eyebrow-track);
+    font-size: 12.5px; font-weight: 700; color: var(--muted); margin: 0 0 18px;
+  }
+  h1 {
+    font-weight: var(--hero-weight); letter-spacing: var(--hero-track);
+    font-size: clamp(38px, 6.4vw, 68px); line-height: 1.04; margin: 0; text-wrap: balance;
+    max-width: 15ch;
+  }
+  h1 .hl { color: var(--accent); }
+  [data-skin="bold"] h1 { text-transform: uppercase; }
+  .standfirst { max-width: 58ch; color: var(--ink-2); margin: 22px 0 0; font-size: calc(var(--body-size) + 1px); }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 44px 0 0; }
+  .tile { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
+  .tile b { display: block; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .tile span { color: var(--muted); font-size: 13.5px; }
+  [data-skin="bold"] .tile b { background: linear-gradient(100deg, var(--accent), var(--bar)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  [data-skin="a11y"] .tile b { color: var(--ink); }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 84px; }
+  h2 { font-size: 26px; letter-spacing: -0.01em; margin: 0 0 6px; text-wrap: balance; }
+  .sub { color: var(--muted); margin: 0 0 28px; max-width: 62ch; }
+
+  /* ---------- Bars ---------- */
+  .bars { display: grid; gap: 13px; }
+  .row { display: grid; grid-template-columns: 150px 1fr 64px; align-items: center; gap: 14px; }
+  .row .name { font-size: 14.5px; color: var(--ink-2); text-align: right; font-weight: 600; }
+  .track { background: var(--bar-track); border-radius: 999px; height: var(--bar-h); overflow: hidden; }
+  .fill { height: 100%; background: var(--bar); border-radius: 999px; width: 0; transition: width .9s cubic-bezier(.2,.7,.2,1); }
+  [data-skin="bold"] .fill { background: linear-gradient(90deg, var(--bar), var(--accent)); }
+  [data-skin="a11y"] .fill {
+    background: repeating-linear-gradient(135deg, var(--bar) 0 10px, #4d86c9 10px 20px);
+  }
+  .row .val { font-weight: 800; font-variant-numeric: tabular-nums; font-size: 15px; }
+  @media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
+
+  /* ---------- Signals ---------- */
+  .signals { display: grid; gap: 14px; padding: 0; margin: 0; list-style: none; counter-reset: sig; }
+  .signals li {
+    background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 18px 22px; box-shadow: var(--shadow); display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start;
+  }
+  .signals li::before {
+    counter-increment: sig; content: counter(sig, decimal-leading-zero);
+    font-weight: 800; color: var(--accent); font-size: 20px; font-variant-numeric: tabular-nums; padding-top: 2px;
+  }
+  .signals b { display: block; margin-bottom: 2px; }
+  .signals p { margin: 0; color: var(--ink-2); font-size: calc(var(--body-size) - 1px); }
+
+  /* ---------- Companies ---------- */
+  .cos { display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 14px; }
+  .co { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
+  .co .head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .co h3 { margin: 0; font-size: 16.5px; }
+  .co .n { font-weight: 800; font-size: 22px; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .co .fn { color: var(--muted); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.08em; margin: 2px 0 12px; }
+  .co .sk { display: flex; flex-wrap: wrap; gap: 6px; }
+  .co .sk i { font-style: normal; background: var(--chip); border-radius: 999px; padding: 4px 10px; font-size: 12.5px; color: var(--ink-2); }
+
+  /* ---------- Footer CTA ---------- */
+  .cta { margin-top: 96px; text-align: center; border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px);
+         padding: 56px 28px; background: var(--bg-2); box-shadow: var(--shadow); }
+  .cta h2 { font-size: clamp(24px, 3.6vw, 34px); }
+  .cta .btn {
+    display: inline-block; margin-top: 22px; background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; padding: 14px 26px; border-radius: 999px; text-decoration: none; font-size: 16px;
+  }
+  .cta .btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .fineprint { color: var(--muted); font-size: 13px; margin-top: 40px; text-align: center; }
+  .fineprint a { color: inherit; text-decoration: underline; }
+</style>
+
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">Skills Watch<span class="dot">.</span></div>
+    <div class="skins" role="group" aria-label="Page style">
+      <button type="button" data-set="minimal" aria-pressed="true">Minimal</button>
+      <button type="button" data-set="a11y" aria-pressed="false">A11y</button>
+      <button type="button" data-set="bold" aria-pressed="false">Bold</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Hiring intelligence · Managed WordPress Hosting · Snapshot 2026-08-18</p>
+    <h1>The skills your industry is <span class="hl">actually hiring for.</span></h1>
+    <p class="standfirst">
+      Skills Watch reads the public job openings of an industry's companies and turns them
+      into skill-demand data. This is the live report for managed WordPress hosting —
+      fork the repo, swap one CSV, and watch your own sector instead.
+    </p>
+    <div class="tiles">
+      <div class="tile"><b>281</b><span>unique open jobs analysed</span></div>
+      <div class="tile"><b>11</b><span>companies collected of 16 tracked</span></div>
+      <div class="tile"><b>82</b><span>distinct skills detected</span></div>
+      <div class="tile"><b>28.5%</b><span>of jobs ask for observability — the #1 skill</span></div>
+    </div>
+  </div>
+
+  <section aria-labelledby="skills-h">
+    <h2 id="skills-h">Top skills by demand rate</h2>
+    <p class="sub">Share of all 281 analysed vacancies that mention each skill. A job
+    mentioning a skill ten times counts once — demand, not word frequency.</p>
+    <div class="bars">
+      <div class="row"><span class="name">Observability</span><div class="track"><div class="fill" data-w="100"></div></div><span class="val">28.5%</span></div>
+      <div class="row"><span class="name">Python</span><div class="track"><div class="fill" data-w="98.6"></div></div><span class="val">28.1%</span></div>
+      <div class="row"><span class="name">WordPress</span><div class="track"><div class="fill" data-w="98.6"></div></div><span class="val">28.1%</span></div>
+      <div class="row"><span class="name">Kubernetes</span><div class="track"><div class="fill" data-w="89.8"></div></div><span class="val">25.6%</span></div>
+      <div class="row"><span class="name">Go</span><div class="track"><div class="fill" data-w="60.0"></div></div><span class="val">17.1%</span></div>
+      <div class="row"><span class="name">LLMs</span><div class="track"><div class="fill" data-w="57.5"></div></div><span class="val">16.4%</span></div>
+      <div class="row"><span class="name">AWS</span><div class="track"><div class="fill" data-w="56.1"></div></div><span class="val">16.0%</span></div>
+      <div class="row"><span class="name">Terraform</span><div class="track"><div class="fill" data-w="55.1"></div></div><span class="val">15.7%</span></div>
+      <div class="row"><span class="name">Linux</span><div class="track"><div class="fill" data-w="48.8"></div></div><span class="val">13.9%</span></div>
+      <div class="row"><span class="name">CI/CD</span><div class="track"><div class="fill" data-w="47.4"></div></div><span class="val">13.5%</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sig-h">
+    <h2 id="sig-h">Notable hiring signals</h2>
+    <p class="sub">Evidence-cited findings from this snapshot. Job postings are hiring
+    signals — they suggest priorities, they don't prove internal strategy.</p>
+    <ol class="signals">
+      <li><div><b>Infrastructure skills lead the industry.</b>
+        <p>Observability (28.5%), Kubernetes (25.6%), Terraform (15.7%) and CI/CD (13.5%) all
+        rank in the top ten — managed WordPress hosting recruits like a cloud-infrastructure
+        industry that happens to serve WordPress.</p></div></li>
+      <li><div><b>WordPress itself appears in 28.1% of vacancies.</b>
+        <p>Concentrated in the pure-play hosts: 29 of Pantheon's 30 jobs, all 19 at
+        Automattic, all 11 at WP Engine. The diversified companies mention it far less.</p></div></li>
+      <li><div><b>AI hiring is real but concentrated.</b>
+        <p>LLMs appear in 46 jobs (16.4%) — 42 of them at DigitalOcean and GoDaddy. The
+        pure-play WordPress hosts show almost no LLM-related hiring yet.</p></div></li>
+      <li><div><b>One company is half the dataset.</b>
+        <p>DigitalOcean accounts for 143 of 281 analysed jobs (51%), so sector-level rates
+        lean toward its profile; company-level tables give the cleaner pure-play picture.</p></div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="co-h">
+    <h2 id="co-h">Who's hiring, and for what</h2>
+    <p class="sub">Open vacancies per company with each company's most-demanded skills.
+    Companies under 10 jobs: treat rates as indicative only.</p>
+    <div class="cos">
+      <div class="co"><div class="head"><h3>DigitalOcean</h3><span class="n">143</span></div>
+        <p class="fn">Engineering-led</p>
+        <div class="sk"><i>Kubernetes</i><i>Python</i><i>Observability</i><i>Go</i><i>LLMs</i></div></div>
+      <div class="co"><div class="head"><h3>Newfold Digital</h3><span class="n">40</span></div>
+        <p class="fn">Sales-led</p>
+        <div class="sk"><i>WordPress</i><i>SEO</i><i>DNS</i><i>Support</i></div></div>
+      <div class="co"><div class="head"><h3>Pantheon</h3><span class="n">30</span></div>
+        <p class="fn">Engineering-led · 87% remote</p>
+        <div class="sk"><i>WordPress</i><i>Google Cloud</i><i>Python</i><i>JavaScript</i></div></div>
+      <div class="co"><div class="head"><h3>GoDaddy</h3><span class="n">26</span></div>
+        <p class="fn">Engineering-led</p>
+        <div class="sk"><i>Observability</i><i>AWS</i><i>LLMs</i><i>Python</i></div></div>
+      <div class="co"><div class="head"><h3>Automattic</h3><span class="n">19</span></div>
+        <p class="fn">Sales-led</p>
+        <div class="sk"><i>WooCommerce</i><i>WordPress</i><i>Salesforce</i><i>PHP</i></div></div>
+      <div class="co"><div class="head"><h3>WP Engine</h3><span class="n">11</span></div>
+        <p class="fn">Mixed functions</p>
+        <div class="sk"><i>WordPress</i><i>Salesforce</i><i>Python</i><i>SQL</i></div></div>
+      <div class="co"><div class="head"><h3>Kinsta</h3><span class="n">3</span></div>
+        <p class="fn">Small sample</p>
+        <div class="sk"><i>WordPress</i><i>CDN</i><i>DNS</i></div></div>
+      <div class="co"><div class="head"><h3>Rocket.net</h3><span class="n">3</span></div>
+        <p class="fn">Support-led · small sample</p>
+        <div class="sk"><i>Cloudflare</i><i>Nginx</i><i>Linux</i><i>PHP</i></div></div>
+      <div class="co"><div class="head"><h3>Others</h3><span class="n">6</span></div>
+        <p class="fn">Pressable · SiteGround · Servebolt</p>
+        <div class="sk"><i>WooCommerce</i><i>React</i><i>Ansible</i></div></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Watch your own industry.</h2>
+    <p class="sub" style="margin:10px auto 0;">Fork the repo, edit one CSV of companies, run one
+    command. Skill-demand reports, trend history, and a personal skill-gap analysis — open
+    source, no API keys, no LLM required for the data.</p>
+    <a class="btn" href="https://github.com/deshabhishek007/skills-watch">Fork Skills Watch on GitHub</a>
+  </div>
+
+  <p class="fineprint">Data collected from official careers sources on 2026-08-18 ·
+    respectful rate-limits, no bot-evasion, vacancy text only ·
+    <a href="https://github.com/deshabhishek007/skills-watch/blob/master/output/report.md">full report &amp; methodology</a></p>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const btns = document.querySelectorAll(".skins button");
+  const requested = new URLSearchParams(location.search).get("skin");
+  if (["minimal", "a11y", "bold"].includes(requested)) {
+    root.setAttribute("data-skin", requested);
+    btns.forEach(x => x.setAttribute("aria-pressed", String(x.dataset.set === requested)));
+  }
+  btns.forEach(b => b.addEventListener("click", () => {
+    root.setAttribute("data-skin", b.dataset.set);
+    btns.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  }));
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fills = document.querySelectorAll(".fill");
+  requestAnimationFrame(() => fills.forEach(f => {
+    if (reduced) { f.style.transition = "none"; }
+    f.style.width = f.dataset.w + "%";
+  }));
+</script>

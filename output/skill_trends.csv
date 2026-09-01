@@ -1,0 +1,97 @@
+skill,current_demand_rate,previous_demand_rate,change_pp,current_rank,previous_rank,status
+Apache Kafka,5.3,0.0,5.3,33,,new
+Helm,4.6,0.0,4.6,35,,new
+Next.js,4.6,0.0,4.6,37,,new
+GitHub Actions,3.9,0.0,3.9,45,,new
+OpenTelemetry,3.9,0.0,3.9,46,,new
+SIEM,3.6,0.0,3.6,49,,new
+CI/CD,16.7,13.5,3.2,7,10,continuing
+GraphQL,3.2,0.0,3.2,50,,new
+WordPress,24.9,28.1,-3.2,3,3,continuing
+JavaScript,8.5,11.4,-2.9,21,15,continuing
+GDPR,2.8,0.0,2.8,56,,new
+Kubernetes,22.8,25.6,-2.8,4,4,continuing
+SEO,0.4,3.2,-2.8,94,51,continuing
+Datadog,2.1,0.0,2.1,63,,new
+Go,19.2,17.1,2.1,5,5,continuing
+Incident Response,14.2,12.1,2.1,11,14,continuing
+Node.js,9.3,11.4,-2.1,19,16,continuing
+AWS,17.8,16.0,1.8,6,7,continuing
+Jenkins,1.8,0.0,1.8,67,,new
+PCI DSS,1.8,0.0,1.8,69,,new
+Product Management,11.0,12.8,-1.8,14,12,continuing
+LLMs,14.9,16.4,-1.5,9,6,continuing
+ISO 27001,1.4,0.0,1.4,72,,new
+Linux,15.3,13.9,1.4,8,9,continuing
+Observability,29.9,28.5,1.4,1,1,continuing
+RAG,3.2,4.6,-1.4,53,36,continuing
+Technical Support,7.5,8.9,-1.4,24,21,continuing
+Ansible,7.1,6.0,1.1,26,29,continuing
+Argo CD,1.1,0.0,1.1,76,,new
+Docker,8.2,7.1,1.1,22,25,continuing
+PHP,5.7,6.8,-1.1,30,26,continuing
+Partnerships,5.7,6.8,-1.1,31,27,continuing
+React,2.5,3.6,-1.1,61,47,continuing
+TypeScript,3.2,4.3,-1.1,54,40,continuing
+Rust,2.8,1.8,1.0,57,59,continuing
+SQL,13.5,12.5,1.0,13,13,continuing
+Salesforce,10.0,11.0,-1.0,17,18,continuing
+Terraform,14.9,15.7,-0.8,10,8,continuing
+WAF,2.8,3.6,-0.8,58,48,continuing
+Apache,4.3,5.0,-0.7,40,32,continuing
+Application Security,1.8,2.5,-0.7,65,54,continuing
+C#,0.7,0.0,0.7,82,,new
+C++,1.1,0.4,0.7,77,78,continuing
+Content Marketing,0.0,0.7,-0.7,,70,gone
+DNS,7.1,6.4,0.7,27,28,continuing
+Elasticsearch,1.8,1.1,0.7,66,67,continuing
+Google Cloud,13.9,13.2,0.7,12,11,continuing
+Java,5.0,4.3,0.7,34,38,continuing
+Machine Learning,3.2,3.9,-0.7,52,45,continuing
+MySQL,10.3,11.0,-0.7,16,17,continuing
+SOC 2,5.7,5.0,0.7,32,33,continuing
+AI Agents,4.3,3.9,0.4,39,41,continuing
+Bash,5.7,5.3,0.4,29,31,continuing
+CDN,2.8,3.2,-0.4,55,49,continuing
+Generative AI,3.9,4.3,-0.4,44,37,continuing
+Grafana,4.3,3.9,0.4,41,43,continuing
+Tableau,0.7,1.1,-0.4,85,69,continuing
+cPanel,1.4,1.8,-0.4,74,61,continuing
+Account Management,8.5,8.2,0.3,20,22,continuing
+HubSpot,3.6,3.9,-0.3,48,44,continuing
+Load Balancing,2.5,2.8,-0.3,60,52,continuing
+MLOps,1.1,1.4,-0.3,79,62,continuing
+MariaDB,1.1,1.4,-0.3,80,63,continuing
+Microsoft Azure,10.3,10.0,0.3,15,19,continuing
+Nginx,1.8,2.1,-0.3,68,56,continuing
+Project Management,3.9,3.6,0.3,47,46,continuing
+Prometheus,4.3,4.6,-0.3,42,35,continuing
+Prompt Engineering,0.4,0.7,-0.3,93,72,continuing
+Redis,4.6,4.3,0.3,38,39,continuing
+Vue.js,0.4,0.7,-0.3,95,75,continuing
+B2B Sales,0.4,0.4,0.0,88,77,continuing
+Cloudflare,3.9,3.9,0.0,43,42,continuing
+Customer Success,9.6,9.6,0.0,18,20,continuing
+DDoS Mitigation,1.1,1.1,0.0,78,66,continuing
+Databricks,0.4,0.4,0.0,89,79,continuing
+Git,7.5,7.5,0.0,23,23,continuing
+Gutenberg,0.7,0.7,0.0,83,71,continuing
+Looker,3.2,3.2,0.0,51,50,continuing
+MongoDB,4.6,4.6,0.0,36,34,continuing
+Penetration Testing,1.1,1.1,0.0,81,68,continuing
+Performance Marketing,0.4,0.4,0.0,90,80,continuing
+Plesk,0.4,0.4,0.0,91,81,continuing
+PostgreSQL,6.0,6.0,0.0,28,30,continuing
+Power BI,0.4,0.4,0.0,92,82,continuing
+PyTorch,1.8,1.8,0.0,70,58,continuing
+Python,28.1,28.1,0.0,2,2,continuing
+Risk Management,0.7,0.7,0.0,84,73,continuing
+Ruby,2.1,2.1,0.0,64,57,continuing
+Snowflake,2.5,2.5,0.0,62,55,continuing
+TensorFlow,1.8,1.8,0.0,71,60,continuing
+Vector Databases,0.7,0.7,0.0,86,74,continuing
+WP-CLI,1.4,1.4,0.0,73,64,continuing
+WooCommerce,7.5,7.5,0.0,25,24,continuing
+WordPress Multisite,0.7,0.7,0.0,87,76,continuing
+WordPress VIP,2.8,2.8,0.0,59,53,continuing
+dbt,1.4,1.4,0.0,75,65,continuing

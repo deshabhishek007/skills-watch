@@ -23,7 +23,9 @@ functions:
   - name: Customer Support
     patterns: ["support", "happiness", "customer service", "customer care", "technical account", "help ?desk"]
   - name: Finance
-    patterns: ["finance", "accountant", "accounting", "payroll", "\\bFP&A\\b", "controller", "billing", "\\bCFO\\b"]
+    # "billing" excludes billing-engineering roles, which are Engineering jobs
+    # that happen to own the billing domain (e.g. "Software Engineer, Billing Engineering").
+    patterns: ["finance", "accountant", "accounting", "payroll", "\\bFP&A\\b", "controller", "billing(?! ?engineer)", "\\bCFO\\b"]
   - name: HR / People
     patterns: ["recruiter", "recruiting", "talent", "people operations", "human resources", "\\bHR\\b", "learning and development"]
   - name: Legal / Compliance

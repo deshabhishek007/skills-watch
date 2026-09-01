@@ -7,3 +7,4 @@ venv/
 output/cache/
 profile/my-skills.yml
 .DS_Store
+.metadata_never_index

@@ -26,6 +26,8 @@ Programming:
   - Vue.js
   - Laravel
   - Symfony
+  - Next.js
+  - GraphQL
 
 WordPress:
   - WordPress
@@ -62,6 +64,12 @@ Infrastructure:
   - Prometheus
   - Grafana
   - Observability
+  - OpenTelemetry
+  - Datadog
+  - GitHub Actions
+  - Jenkins
+  - Helm
+  - Argo CD
 
 Data:
   - SQL
@@ -72,6 +80,7 @@ Data:
   - Memcached
   - MongoDB
   - Elasticsearch
+  - Apache Kafka
   - Snowflake
   - Databricks
   - Apache Spark
@@ -100,6 +109,10 @@ Security:
   - DDoS Mitigation
   - WAF
   - Zero Trust
+  - GDPR
+  - SIEM
+  - PCI DSS
+  - ISO 27001
 
 Business:
   - Financial Modelling
